@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Akun"
+        android:id="@+id/account"
+        android:icon="@drawable/account"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:title="Info Akun"
+        android:id="@+id/info"
+        />
+    <item
+        android:title="Pengaturan"
+        android:id="@+id/setting"
+        />
+    <item
+        android:title="Log Out"
+        android:id="@+id/logout"/>
+</menu>
