@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/berkas_mahasiswa"
+    android:padding="10dp"
+    android:layout_below="@id/toolbar"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--No. Pendataran-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Pendaftaran"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No."
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <!--Nama-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Mahasiswa"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <!--NIM-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIM"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIM"
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Tugas Akhir"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judul"
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dosen Pembimbing"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"
+                android:layout_marginBottom="3dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:inputType="none"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berkas"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Berkas.pdf"
+                android:inputType="none"
+                android:textColor="@color/blue"
+                android:background="@drawable/shape_form"
+                android:padding="20dp"
+                android:gravity="center"
+                android:textStyle="italic" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catatan"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catatan untuk Mahasiswa"
+                android:inputType="text"
+                android:textColor="#707070"
+                android:background="@drawable/shape_form"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/statusButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menunggu..."
+                android:backgroundTint="@color/grey"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <Button
+            android:id="@+id/buttonEdit"
+            android:layout_marginRight="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kembali" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Simpan"/>
+
+    </LinearLayout>
+
+</LinearLayout>
