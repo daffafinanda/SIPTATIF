@@ -21,10 +21,10 @@
 
             <!-- Tanggal -->
             <TextView
-                android:id="@+id/textNoPendaftaran"
+                android:id="@+id/tanggal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No Pendaftaran: 24 April 2024"
+                android:text="No Pendaftaran: 12345"
                 android:textSize="16sp"
                 android:textColor="@color/black"/>
 

@@ -1,6 +1,7 @@
 package com.example.siptatif;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class PembimbingAdapter extends RecyclerView.Adapter<PembimbingAdapter.Pe
     @NonNull
     @Override
     public PembimbingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.cv_dosen_pembimbing_list, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.cv_dosen, parent, false);
         return new PembimbingViewHolder(view);
     }
 
@@ -33,19 +36,16 @@ public class PembimbingAdapter extends RecyclerView.Adapter<PembimbingAdapter.Pe
     public void onBindViewHolder(@NonNull PembimbingViewHolder holder, int position) {
         Pembimbing pembimbing = mPembimbingList.get(position);
         holder.textPembimbing.setText(pembimbing.getNama());
-        holder.textNIP.setText(pembimbing.getNip());
+        holder.textNIP.setText("NIP: "+ pembimbing.getNip());
 
-        // Set OnClickListener for buttons
-        holder.buttonDetailPembimbing.setOnClickListener(v -> {
-            // Detail button logic
-        });
-
-        holder.buttonEditPembimbing.setOnClickListener(v -> {
-            // Edit button logic
-        });
-
-        holder.buttonDeletePembimbing.setOnClickListener(v -> {
-            // Delete button logic
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DetailPembimbing.class);
+                intent.putExtra("nama_pembimbing", pembimbing.getNama());
+                intent.putExtra("nip_pembimbing", pembimbing.getNip());
+                mContext.startActivity(intent);
+            }
         });
     }
 
@@ -57,33 +57,35 @@ public class PembimbingAdapter extends RecyclerView.Adapter<PembimbingAdapter.Pe
     static class PembimbingViewHolder extends RecyclerView.ViewHolder {
 
         TextView textPembimbing, textNIP;
-        Button buttonDetailPembimbing, buttonEditPembimbing, buttonDeletePembimbing;
 
         PembimbingViewHolder(@NonNull View itemView) {
             super(itemView);
-            textPembimbing = itemView.findViewById(R.id.textPembimbing);
+            textPembimbing = itemView.findViewById(R.id.textnamadosen);
             textNIP = itemView.findViewById(R.id.textNIP);
-            buttonDetailPembimbing = itemView.findViewById(R.id.buttonDetailPembimbing);
-            buttonEditPembimbing = itemView.findViewById(R.id.buttonEditPembimbing);
-            buttonDeletePembimbing = itemView.findViewById(R.id.buttonDeletePembimbing);
         }
     }
 
     public static class Pembimbing {
-        private String nama;
-        private String nip;
 
-        public Pembimbing(String nama, String nip) {
-            this.nama = nama;
-            this.nip = nip;
+        private String nama_pembimbing;
+        private String nip_pembimbing;
+        private String jenis_kelamin;
+
+        public Pembimbing(String nama, String nip, String jeniskelamin) {
+            this.nama_pembimbing = nama;
+            this.nip_pembimbing = nip;
+            this.jenis_kelamin = jeniskelamin;
         }
 
         public String getNama() {
-            return nama;
+            return nama_pembimbing;
         }
 
         public String getNip() {
-            return nip;
+            return nip_pembimbing;
+        }
+        public String getJK() {
+            return jenis_kelamin;
         }
     }
 }

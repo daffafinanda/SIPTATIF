@@ -1,5 +1,6 @@
 package com.example.siptatif;
 
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -7,8 +8,13 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class BerkasAdapter extends FragmentStateAdapter {
 
-    public BerkasAdapter(@NonNull FragmentActivity fragmentActivity) {
+    private Bundle bundleMahasiswa;
+    private Bundle bundlePenguji;
+
+    public BerkasAdapter(@NonNull FragmentActivity fragmentActivity, Bundle bundleMahasiswa, Bundle bundlePenguji) {
         super(fragmentActivity);
+        this.bundleMahasiswa = bundleMahasiswa;
+        this.bundlePenguji = bundlePenguji;
     }
 
     @NonNull
@@ -16,11 +22,15 @@ public class BerkasAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new BerkasInputFragment();
+                BerkasMahasiswaFragment berkasMahasiswaFragment = new BerkasMahasiswaFragment();
+                berkasMahasiswaFragment.setArguments(bundleMahasiswa);
+                return berkasMahasiswaFragment;
             case 1:
-                return new BerkasMahasiswaFragment();
+                BerkasInputFragment berkasInputFragment = new BerkasInputFragment();
+                berkasInputFragment.setArguments(bundlePenguji);
+                return berkasInputFragment;
             default:
-                return new BerkasInputFragment();
+                return new Fragment();
         }
     }
 
@@ -29,4 +39,3 @@ public class BerkasAdapter extends FragmentStateAdapter {
         return 2;
     }
 }
-

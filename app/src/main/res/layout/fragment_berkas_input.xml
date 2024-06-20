@@ -26,24 +26,27 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="@color/black" />
-            <EditText
+            <Spinner
+                android:id="@+id/berkas_penguji1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Penguji 1"
-                android:inputType="none"
+                android:inputType="textPersonName"
                 android:textColor="#707070"
                 android:background="@drawable/shape_form"
                 android:padding="5dp"
                 android:layout_marginBottom="5dp"/>
-            <EditText
+            <Spinner
+                android:id="@+id/berkas_penguji2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Penguji 2"
-                android:inputType="none"
+                android:inputType="textPersonName"
                 android:textColor="#707070"
                 android:background="@drawable/shape_form"
                 android:padding="5dp"
                 android:layout_marginBottom="30dp"/>
+
 
             <TableLayout
                 android:id="@+id/tableLayout"
@@ -75,33 +78,6 @@
                         android:background="@color/grey"
                         android:gravity="center"/>
                 </TableRow>
-
-                <TableRow>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:text="Row 1 Col 1"
-                        android:padding="8dp"
-                        android:layout_weight="5"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:text="Row 1 Col 2"
-                        android:padding="8dp"
-                        android:layout_weight="3"/>
-                </TableRow>
-
-                <TableRow>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="5"
-                        android:text="Row 2 Col 1"
-                        android:padding="8dp"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="3"
-                        android:text="Row 2 Col 2"
-                        android:padding="8dp"/>
-                </TableRow>
-
             </TableLayout>
         </LinearLayout>
 

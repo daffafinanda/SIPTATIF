@@ -17,16 +17,26 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".DataActivity"
+        <activity android:name=".LoginActivity"
+            android:exported="true"/>
+        <activity android:name=".PendaftaranActivity"
             android:exported="true"/>
         <activity android:name=".LecturerActivity"
             android:exported="true"/>
+        <activity android:name=".BerkasActivity"
+            android:exported="true"/>
+        <activity android:name=".DetailPenguji"
+            android:exported="true"/>
+        <activity android:name=".DetailPembimbing"
+            android:exported="true"/>
+
 
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
 </manifest>

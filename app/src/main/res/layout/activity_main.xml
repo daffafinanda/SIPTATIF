@@ -16,7 +16,6 @@
         android:minHeight="80dp"
         app:title="Home"
         android:elevation="10dp"
-
         />
 
     <!-- Isi Lay Out -->

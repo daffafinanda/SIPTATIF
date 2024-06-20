@@ -9,12 +9,8 @@
         app:showAsAction="ifRoom"
         />
     <item
-        android:title="Info Akun"
-        android:id="@+id/info"
-        />
-    <item
-        android:title="Pengaturan"
-        android:id="@+id/setting"
+        android:title="Profil"
+        android:id="@+id/profil"
         />
     <item
         android:title="Log Out"

@@ -1,6 +1,7 @@
 package com.example.siptatif;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class PengujiAdapter extends RecyclerView.Adapter<PengujiAdapter.PengujiV
     @NonNull
     @Override
     public PengujiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.cv_dosen_penguji_list, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.cv_dosen, parent, false);
         return new PengujiViewHolder(view);
     }
 
@@ -33,18 +34,16 @@ public class PengujiAdapter extends RecyclerView.Adapter<PengujiAdapter.PengujiV
     public void onBindViewHolder(@NonNull PengujiViewHolder holder, int position) {
         Penguji penguji = mPengujiList.get(position);
         holder.textPenguji.setText(penguji.getNama());
-        holder.textNIP.setText(penguji.getNip());
+        holder.textNIP.setText("NIP: "+penguji.getNip());
 
-        holder.buttonDetailPenguji.setOnClickListener(v -> {
-            // Detail button logic
-        });
-
-        holder.buttonEditPenguji.setOnClickListener(v -> {
-            // Edit button logic
-        });
-
-        holder.buttonDeletePenguji.setOnClickListener(v -> {
-            // Delete button logic
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DetailPenguji.class);
+                intent.putExtra("nama_penguji", penguji.getNama());
+                intent.putExtra("nip_penguji", penguji.getNip());
+                mContext.startActivity(intent);
+            }
         });
     }
 
@@ -60,29 +59,26 @@ public class PengujiAdapter extends RecyclerView.Adapter<PengujiAdapter.PengujiV
 
         PengujiViewHolder(@NonNull View itemView) {
             super(itemView);
-            textPenguji = itemView.findViewById(R.id.textPenguji);
+            textPenguji = itemView.findViewById(R.id.textnamadosen);
             textNIP = itemView.findViewById(R.id.textNIP);
-            buttonDetailPenguji = itemView.findViewById(R.id.buttonDetailPenguji);
-            buttonEditPenguji = itemView.findViewById(R.id.buttonEditPenguji);
-            buttonDeletePenguji = itemView.findViewById(R.id.buttonDeletePenguji);
         }
     }
 
     public static class Penguji {
-        private String nama;
-        private String nip;
+        private String nama_penguji;
+        private String nip_penguji;
 
         public Penguji(String nama, String nip) {
-            this.nama = nama;
-            this.nip = nip;
+            this.nama_penguji = nama;
+            this.nip_penguji = nip;
         }
 
         public String getNama() {
-            return nama;
+            return nama_penguji;
         }
 
         public String getNip() {
-            return nip;
+            return nip_penguji;
         }
     }
 }
